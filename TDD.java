@@ -14,7 +14,7 @@ public class TDD {
             delimiter = m.group(1);
             numbersWithoutDelimiter = m.group(2);
         }
-
+        numbersWithoutDelimiter = numbersWithoutDelimiter.replaceAll("\n", delimiter);
         String[] numberStrings = numbersWithoutDelimiter.split(Pattern.quote(delimiter));
         int[] numbersInt = new int[numberStrings.length];
         StringBuilder negativeNumbers = new StringBuilder();
@@ -36,7 +36,7 @@ public class TDD {
     }
 
     public static void main(String[] args) {
-        int ans = add("1,2,3");
+        int ans = add("1\n2,3");
         System.out.println(ans);
     }
 }
